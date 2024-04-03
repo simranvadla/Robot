@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title><h1>Im not a robot</h1></title>
+   </head>
+
+   <script>
+    // Array of images (in reality, you should have a variety of different images)
+    var images = [
+        src="F1.jpeg",
+        src="F2.jpeg",
+        src="F3.jpeg",
+        src="F4.jpeg",
+        src="F5.jpeg",
+        src="F6.jpg"
+        // Image URL
+        // Add more image URLs here
+    ];
+
+    // Function to display a random image from the images array
+    function displayRandomImage() {
+        var randomIndex = Math.floor(Math.random() * images.length);
+        var imageUrl = images[randomIndex];
+        var captchaImage = document.getElementById("captcha-image");
+        captchaImage.src = imageUrl;
+    }
+
+    // Function to validate the captcha
+    function validateCaptcha() {
+        var userInput = document.getElementById("captcha-input").value;
+        var expectedValue = "some_value"; // Expected value for the captcha (in reality, you'd have a more secure mechanism)
+        if (userInput === expectedValue) {
+            alert("Captcha is correct!");
+        } else {
+            alert("Captcha is incorrect. Please try again.");
+        }
+    }
+</script>
+
+
+<body>
+    <h2>Im not a robot</h2>
+    <p>Please check the box below and enter the code displayed in the image.</p>
+    <div>
+        <input type="checkbox" id="captcha-checkbox" onchange="displayRandomImage()">
+        <label for="captcha-checkbox">I am not a robot</label>
+    </div>
+    <div>
+        <img id="captcha-image" src="F1.jpeg", alt="Captcha Image" style="height:150px; width:150px ;">
+        <img id="captcha-image" src="F2.jpeg", alt="Captcha Image"style="height:150px; width:150px ;">
+        <img id="captcha-image" src="F3.jpeg", alt="Captcha Image"style="height:150px; width:150px ;"> <br><br>
+        <img id="captcha-image" src="F4.jpeg", alt="Captcha Image"style="height:150px; width:150px ;">
+        <img id="captcha-image" src="F5.jpeg", alt="Captcha Image"style="height:150px; width:150px ;">
+        <img id="captcha-image" src="F6.jpg", alt="Captcha Image"style="height:150px; width:150px ;">
+       
+
+        <!-- <img id="captcha-image" src="img5.jpg", alt="Captcha Image"> -->
+    </div>
+    <div>
+        <!-- <input type="text" id="captcha-input" placeholder="Enter Captcha Code">
+        <button onclick="validateCaptcha()">Submit</button> -->
+    </div>
+</body>
+</html>
+
+
